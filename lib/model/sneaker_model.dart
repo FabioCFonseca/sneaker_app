@@ -7,6 +7,7 @@ class SneakerModel {
   List<String> images;
   String description;
   List<MaterialColor> colors;
+  Color cardBgColor;
 
   SneakerModel({
     required this.price,
@@ -15,11 +16,13 @@ class SneakerModel {
     required this.images,
     required this.description,
     required this.colors,
+    required this.cardBgColor,
   });
 
   static List<SneakerModel> generateSneaker() {
     return [
       SneakerModel(
+        cardBgColor: Colors.deepOrange[300]!,
         price: '165',
         name: 'AIR MAX TAVAS',
         seriesNumber: '001',
@@ -39,6 +42,7 @@ class SneakerModel {
         ],
       ),
       SneakerModel(
+          cardBgColor: Colors.green[400]!,
           price: '265',
           name: 'POCKET FLY DM',
           seriesNumber: '03',

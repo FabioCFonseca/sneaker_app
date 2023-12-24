@@ -30,7 +30,7 @@ class BrandsCarousell extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: 30,),
         Expanded(
           child: ListView.builder(
               scrollDirection: Axis.horizontal,

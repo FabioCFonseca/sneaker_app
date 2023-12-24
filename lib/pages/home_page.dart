@@ -23,9 +23,9 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               CustomSearchBar(),
-              SizedBox(height: 30,),
+              SizedBox(height: 45,),
               Flexible(flex: 5, child: SneakersCarousell()),
-              SizedBox(height: 50,),
+              SizedBox(height: 60,),
               Flexible(flex: 2, child: BrandsCarousell()),
               SizedBox(height: 35,)
             ],

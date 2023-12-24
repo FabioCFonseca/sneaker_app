@@ -8,6 +8,8 @@ class SneakersCarousell extends StatelessWidget {
 
   final List<SneakerModel> sneakerList = SneakerModel.generateSneaker();
 
+  String dolarSign = r'$';
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +20,7 @@ class SneakersCarousell extends StatelessWidget {
             'NEW RELEASES',
             style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 30,),
           Expanded(
             child: PageView.builder(
               padEnds: false,
@@ -35,16 +37,16 @@ class SneakersCarousell extends StatelessWidget {
                       margin: EdgeInsets.only(right: 25),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Colors.red[200],
+                        color: sneakerList[index].cardBgColor,
                       ),
                       child: Stack(
                         children: [
-                          Image.asset(sneakerList[index].images[0]),
+                          Image.asset(sneakerList[index].images[0],),
                           Positioned(
                               top: 20,
-                              left: 20,
+                              left: 15,
                               child: Text(
-                                sneakerList[index].price,
+                                dolarSign + sneakerList[index].price,
                                 style: TextStyle(
                                     fontSize: 24,
                                     color: Colors.white,
@@ -52,22 +54,22 @@ class SneakersCarousell extends StatelessWidget {
                               )),
                           Positioned(
                             bottom: 60,
-                            left: 20,
+                            left: 15,
                             child: Text(
                               sneakerList[index].name,
                               style: TextStyle(
-                                  fontSize: 30,
+                                  fontSize: 28,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
                           ),
                           Positioned(
-                              bottom: 20,
-                              left: 20,
+                              bottom: 25,
+                              left: 15,
                               child: Text(
                                 sneakerList[index].seriesNumber,
                                 style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 28,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               )),
