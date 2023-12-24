@@ -1,16 +1,6 @@
-# teste_flutter_21_12
+SNEAKER APP
 
-A new Flutter project.
+App de sneakers desenvolvido com Flutter
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![tela02](https://github.com/FabioCFonseca/sneaker_app/assets/108895922/bf2769cd-3bf7-4d6d-b22a-eacfe0da16b9)
+![tela01](https://github.com/FabioCFonseca/sneaker_app/assets/108895922/63b08c02-a57b-4e55-8adb-903604f03def)
