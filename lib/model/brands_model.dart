@@ -3,7 +3,7 @@ class BrandsModel {
 
   BrandsModel({required this.image});
 
-  static List<BrandsModel> generateBrands () {
+  static List<BrandsModel> generateBrands() {
     return [
       BrandsModel(image: 'assets/brands/adidas.png'),
       BrandsModel(image: 'assets/brands/new_balance.png'),

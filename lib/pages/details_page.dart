@@ -7,9 +7,9 @@ import '../widgets/select_size.dart';
 import '../widgets/sneaker_colors.dart';
 
 class DetailsPage extends StatelessWidget {
-  DetailsPage({super.key, required this.selectedSneaker});
+  const DetailsPage({super.key, required this.selectedSneaker});
 
-  SneakerModel selectedSneaker;
+  final SneakerModel selectedSneaker;
 
   @override
   Widget build(BuildContext context) {
@@ -17,38 +17,38 @@ class DetailsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           selectedSneaker.name + selectedSneaker.seriesNumber,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         forceMaterialTransparency: true,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.black,
           ),
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Container(
+      body: SizedBox(
         height: double.infinity,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Column(
             children: [
               MainImage(sneaker: selectedSneaker),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Description(sneaker: selectedSneaker),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               SneakerColors(
                 sneaker: selectedSneaker,
               ),
-              SelectSize(),
-              SizedBox(
+              const SelectSize(),
+              const SizedBox(
                 height: 25,
               ),
               BuyButtom(sneaker: selectedSneaker),

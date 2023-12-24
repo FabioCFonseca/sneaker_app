@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SelectSize extends StatefulWidget {
-  SelectSize({super.key});
+  const SelectSize({super.key});
 
   @override
   State<SelectSize> createState() => _SelectSizeState();
@@ -11,7 +11,7 @@ class _SelectSizeState extends State<SelectSize> {
   String dropDownValue = 'UK';
   String currentSize = 'Select size';
 
-  List<String> EuSizes = [
+  List<String> euSizes = [
     'Select size',
     '39',
     '40',
@@ -23,7 +23,7 @@ class _SelectSizeState extends State<SelectSize> {
     '46',
     '47',
   ];
-  List<String> UkSizes = [
+  List<String> ukSizes = [
     'Select size',
     '5',
     '6',
@@ -35,7 +35,7 @@ class _SelectSizeState extends State<SelectSize> {
     '12',
     '13',
   ];
-  List<String> UsSizes = [
+  List<String> usSizes = [
     'Select size',
     '6',
     '7',
@@ -51,22 +51,22 @@ class _SelectSizeState extends State<SelectSize> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 15),
+      margin: const EdgeInsets.only(top: 15),
       child: Row(
         children: [
-          Text(
+          const Text(
             'Select Size: ',
             style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
                 color: Colors.deepPurple),
           ),
-          SizedBox(
+          const SizedBox(
             width: 15,
           ),
           DropdownButton(
             value: dropDownValue,
-            items: [
+            items: const [
               DropdownMenuItem(
                 value: 'UK',
                 child: Text('UK'),
@@ -87,25 +87,31 @@ class _SelectSizeState extends State<SelectSize> {
               });
             },
           ),
-          SizedBox(
+          const SizedBox(
             width: 15,
           ),
           DropdownButton(
             value: currentSize,
             items: dropDownValue == 'UK'
-                ? UkSizes.map((size) => DropdownMenuItem(
-                      child: Text(size),
-                      value: size,
-                    )).toList()
-                : dropDownValue == 'US'
-                    ? UsSizes.map((size) => DropdownMenuItem(
-                          child: Text(size),
+                ? ukSizes
+                    .map((size) => DropdownMenuItem(
                           value: size,
-                        )).toList()
-                    : EuSizes.map(
-                        (size) =>
-                            DropdownMenuItem(child: Text(size), value: size),
-                      ).toList(),
+                          child: Text(size),
+                        ))
+                    .toList()
+                : dropDownValue == 'US'
+                    ? usSizes
+                        .map((size) => DropdownMenuItem(
+                              value: size,
+                              child: Text(size),
+                            ))
+                        .toList()
+                    : euSizes
+                        .map(
+                          (size) =>
+                              DropdownMenuItem(value: size, child: Text(size)),
+                        )
+                        .toList(),
             onChanged: (value) {
               setState(() {
                 currentSize = value!;

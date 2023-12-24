@@ -5,13 +5,13 @@ import '../model/brands_model.dart';
 class BrandsCarousell extends StatelessWidget {
   BrandsCarousell({super.key});
 
-  List<BrandsModel> brandsList = BrandsModel.generateBrands();
+  final List<BrandsModel> brandsList = BrandsModel.generateBrands();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
@@ -30,7 +30,9 @@ class BrandsCarousell extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 30,),
+        const SizedBox(
+          height: 30,
+        ),
         Expanded(
           child: ListView.builder(
               scrollDirection: Axis.horizontal,

@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import '../model/sneaker_model.dart';
 
 class SneakerColors extends StatelessWidget {
-  SneakerColors({super.key, required this.sneaker});
+  const SneakerColors({super.key, required this.sneaker});
 
-  SneakerModel sneaker;
+  final SneakerModel sneaker;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 35,
       child: Row(
         children: [
-          Text(
+          const Text(
             'Color:',
             style: TextStyle(
                 fontSize: 24,
@@ -26,7 +26,7 @@ class SneakerColors extends StatelessWidget {
                 itemCount: sneaker.colors.length,
                 itemBuilder: (contetx, index) {
                   return Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
                     width: 25,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,

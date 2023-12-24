@@ -8,17 +8,17 @@ class CustomBottomNavbar extends StatefulWidget {
 }
 
 class _CustomBottomNavbarState extends State<CustomBottomNavbar> {
-  int _selectedIndex = 0; 
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      selectedItemColor:Colors.blue,
+      selectedItemColor: Colors.blue,
       iconSize: 35,
-      currentIndex: _selectedIndex, 
-      onTap: (index) => setState(() => _selectedIndex = index), 
-      items: [
+      currentIndex: _selectedIndex,
+      onTap: (index) => setState(() => _selectedIndex = index),
+      items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',

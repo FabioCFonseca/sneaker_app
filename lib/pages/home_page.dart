@@ -16,29 +16,29 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: double.infinity,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Column(
             children: [
-              CustomSearchBar(),
-              SizedBox(
+              const CustomSearchBar(),
+              const SizedBox(
                 height: 45,
               ),
-              Flexible(flex: 5, child: SneakersCarousell()),
-              SizedBox(
+              const Flexible(flex: 5, child: SneakersCarousell()),
+              const SizedBox(
                 height: 60,
               ),
               Flexible(flex: 2, child: BrandsCarousell()),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               )
             ],
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavbar(),
+      bottomNavigationBar: const CustomBottomNavbar(),
     );
   }
 }
