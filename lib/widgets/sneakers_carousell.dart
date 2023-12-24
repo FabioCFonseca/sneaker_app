@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:teste_flutter_21_12/model/sneaker_model.dart';
 import 'package:teste_flutter_21_12/pages/details_page.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class SneakersCarousell extends StatelessWidget {
   SneakersCarousell({super.key});
-  final PageController _pageController = PageController(viewportFraction: 0.65);
 
   final List<SneakerModel> sneakerList = SneakerModel.generateSneaker();
 
@@ -20,18 +20,30 @@ class SneakersCarousell extends StatelessWidget {
             'NEW RELEASES',
             style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 30,),
+          SizedBox(
+            height: 30,
+          ),
           Expanded(
-            child: PageView.builder(
-              padEnds: false,
-                controller: _pageController,
+            child: CarouselSlider.builder(
+                options: CarouselOptions(
+                  padEnds: false,
+                  height: 400,
+                  viewportFraction: 0.75,
+                  initialPage: 0,
+                  enableInfiniteScroll: true,
+                  autoPlay: true,
+                ),
                 itemCount: sneakerList.length,
-                itemBuilder: (context, index) {
+                itemBuilder:
+                    (BuildContext context, int index, int pageViewIndex) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(
-                        selectedSneaker: sneakerList[index],
-                      )));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailsPage(
+                                    selectedSneaker: sneakerList[index],
+                                  )));
                     },
                     child: Container(
                       margin: EdgeInsets.only(right: 25),
@@ -41,7 +53,9 @@ class SneakersCarousell extends StatelessWidget {
                       ),
                       child: Stack(
                         children: [
-                          Image.asset(sneakerList[index].images[0],),
+                          Image.asset(
+                            sneakerList[index].images[0],
+                          ),
                           Positioned(
                               top: 20,
                               left: 15,

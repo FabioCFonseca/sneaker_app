@@ -23,11 +23,17 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               CustomSearchBar(),
-              SizedBox(height: 45,),
+              SizedBox(
+                height: 45,
+              ),
               Flexible(flex: 5, child: SneakersCarousell()),
-              SizedBox(height: 60,),
+              SizedBox(
+                height: 60,
+              ),
               Flexible(flex: 2, child: BrandsCarousell()),
-              SizedBox(height: 35,)
+              SizedBox(
+                height: 35,
+              )
             ],
           ),
         ),
